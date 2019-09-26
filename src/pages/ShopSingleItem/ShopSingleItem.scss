@@ -1,13 +1,13 @@
 @import '../../assets/scss/partials/partials';
 
-.shop-page-fluid-container {
+.shop-single-item-fluid-container {
   height: 40rem;
   background-image: url('../../assets/img/bg-webshop.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   color: #fff;
 
-  .shop-page-content-container {
+  .shop-single-item--content-container {
     display: flex;
     height: 40rem;
     flex-direction: column;
@@ -22,4 +22,16 @@
       font-size: 2rem;
     }
   }
+}
+
+.shop-single-item-recommendations {
+  width: 100%;
+  letter-spacing: 3px;
+  margin: 60px 0;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 400;
+  color: #292929;
 }

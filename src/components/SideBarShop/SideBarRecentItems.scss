@@ -1,0 +1,51 @@
+@import '../../assets/scss/partials/partials';
+
+.side-bar-recent-items-container {
+  margin: 3rem 0 0 0;
+  display: flex;
+  flex-direction: column;
+
+  &__heading {
+    font-size: 12px;
+    line-height: 24px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: $text-dark;
+    border-bottom: 1px solid black;
+    padding: 0 0 1rem 0;
+    margin-bottom: 1.5rem;
+  }
+
+  &-item-box {
+    margin: 0.5rem 0;
+
+    &__img {
+      width: 10rem;
+      margin: 0 1rem 0 0;
+      float: left;
+    }
+
+    &__text {
+      font-size: 13px;
+      line-height: 24px;
+      font-weight: 400;
+      letter-spacing: 2px;
+      color: $text-dark;
+      cursor: pointer;
+      margin-bottom: 0;
+
+      &_top-item {
+        margin-top: 1.3rem;
+      }
+    }
+
+    &__link {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}

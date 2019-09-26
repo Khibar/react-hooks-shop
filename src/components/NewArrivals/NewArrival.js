@@ -1,5 +1,4 @@
 import React from 'react';
-//import { NavLink } from 'react-router-dom';
 import Col from 'react-bootstrap/Col';
 import data from '../../assets/json/items.json';
 
@@ -8,22 +7,20 @@ import ItemCard from '../../UI/ItemCard/ItemCard';
 import './NewArrivals.scss';
 
 const newItems = data
-  .filter(item => item.isNew === 'true')
+  .filter(item => item.isNew === true)
   .map(res => {
     return (
-      <Col sm={12} md={3}>
+      <Col sm={12} md={3} key={res.id}>
         <ItemCard
-          key={res.id}
           imgUrl={res.imgUrl}
           name={res.name}
           description={res.description}
           price={res.price}
+          id={res.id}
         />
       </Col>
     );
   });
-
-console.log('data :', data);
 
 const NewArrivals = props => {
   return (

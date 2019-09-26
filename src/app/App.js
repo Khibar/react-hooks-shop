@@ -4,12 +4,14 @@ import { Route } from 'react-router-dom';
 import HomePage from '../pages/home/HomePage';
 import CartPage from '../pages/cart/CartPage';
 import ShopPage from '../pages/ShopPage/ShopPage';
+import ShopSingleItem from '../pages/ShopSingleItem/ShopSingleItem';
 
 function App() {
   return (
     <div className="App">
       <Route path="/shop" component={ShopPage} />
       <Route path="/cart" component={CartPage} />
+      <Route path="/item/:id" component={ShopSingleItem} />
       <Route path="/" exact component={HomePage} />
     </div>
   );
