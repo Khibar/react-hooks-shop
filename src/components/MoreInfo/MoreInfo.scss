@@ -1,0 +1,29 @@
+.more-info-container {
+  &-box {
+    height: 25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(247, 247, 247);
+    color: rgb(190, 190, 190);
+    cursor: pointer;
+
+    &:hover {
+      color: #292929;
+    }
+
+    &__icon {
+      font-size: 3.2rem;
+    }
+
+    &__text {
+      margin: 1rem 0 0 0;
+      letter-spacing: 2px;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 1.2rem;
+      line-height: 2.4rem;
+    }
+  }
+}

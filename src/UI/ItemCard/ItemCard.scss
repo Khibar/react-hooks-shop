@@ -1,0 +1,24 @@
+@import '../../assets/scss/partials/partials';
+
+.item-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  &__img {
+    width: 15rem;
+  }
+
+  &__text {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    font-weight: 400;
+    font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+}

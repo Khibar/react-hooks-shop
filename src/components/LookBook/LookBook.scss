@@ -1,0 +1,66 @@
+@import '../../assets/scss/partials/partials';
+
+.look-book-heading-container {
+  &__heading {
+    @include Headings();
+    color: $text-dark;
+    font-size: 1.4rem;
+    letter-spacing: 0.2rem;
+    text-align: center;
+    margin: 0 0 5rem 0;
+  }
+}
+
+.look-book-container {
+  &-box {
+    width: 100%;
+    min-height: 40rem;
+    display: flex;
+    flex-direction: column;
+
+    &_box-1 {
+      background-image: url('../../assets/img/bg-autumn.jpg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    &_box-2 {
+      background-image: url('../../assets/img/bg-shop.jpg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    &__link {
+      &:hover {
+        text-decoration: none;
+        color: $text-bright;
+      }
+      &:visited,
+      :focus,
+      :active {
+        text-decoration: none;
+        outline: none;
+      }
+    }
+
+    &__inner-box {
+      height: 40rem;
+      min-width: 100%;
+      background-color: $bg-second;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__text {
+      font-size: 2rem;
+      color: $text-bright;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+  }
+}

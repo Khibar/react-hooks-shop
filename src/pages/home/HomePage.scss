@@ -1,0 +1,50 @@
+@import '../../assets/scss/partials/partials';
+
+.home-page-landing-screen {
+  height: 100vh;
+  background-image: url('../../assets/img/bg-landing.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+
+  &-content {
+    height: 100vh;
+    background: $bg-second;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    &__heading {
+      @include Headings();
+      margin: 6rem 0 4rem 0;
+    }
+
+    &__btn-collection {
+      @include Button($pg-main, transparent, $pg-main);
+      margin: 0 2rem 0 0;
+      color: $pg-main;
+
+      &:hover {
+        border-color: $pg-white;
+        color: $pg-white;
+      }
+    }
+
+    &__btn-shop {
+      @include Button($text-bright, transparent, $pg-main);
+      margin: 0 0 0 2rem;
+    }
+  }
+}
+
+.home-page-container {
+  height: 400rem;
+  &__row {
+    margin-top: 6rem;
+
+    &_bg-grey {
+      background-color: rgb(247, 247, 247);
+    }
+  }
+}
