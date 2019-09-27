@@ -23,3 +23,67 @@
     }
   }
 }
+
+.cart-page-list-container {
+  margin: 5rem 0 0 0;
+
+  &:first-child {
+    border-top: solid #666 2px;
+  }
+}
+
+.cart-page-list-cart-total-container {
+  margin: 5rem 0 0 0;
+
+  &__heading {
+    margin: -1rem 0 1.5rem 0;
+    font-size: 1.4rem;
+    line-height: 24px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 400;
+    color: $text-dark;
+  }
+
+  &__item {
+    font-size: 12px;
+    line-height: 24px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 400;
+    margin: 0.5rem 0;
+    color: $text-dark;
+    cursor: pointer;
+    border-top: solid 1px #666;
+    padding: 1rem;
+  }
+
+  &__btn {
+    text-transform: uppercase;
+    color: $pg-white;
+    height: 5rem;
+    line-height: 4.6rem;
+    width: 100%;
+    border: 2px solid $pg-main;
+    padding: 0 2.6rem;
+    display: inline-block;
+    cursor: pointer;
+    background-color: $pg-main;
+    font-size: 1.3rem;
+    margin: 2rem 0 0 0;
+
+    &:hover {
+      background-color: $pg-white;
+      border-color: $pg-main;
+      color: $pg-main;
+    }
+
+    &:visited,
+    :focus,
+    :active {
+      text-decoration: none;
+      outline: none;
+    }
+  }
+}

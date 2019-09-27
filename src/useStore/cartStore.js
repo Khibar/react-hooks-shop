@@ -12,11 +12,17 @@ const configureCartStore = () => {
         updateState = [...currentState.cartItems, object];
       }
 
-      return { cartItems: updateState };
+      return { cartItems: updateState, isEmpty: false };
     },
     RemoveFromCart: (currentState, id) => {
+      let isEmpty = false;
       let reducedCart = currentState.cartItems.filter(item => item.id !== id);
-      return { cartItems: reducedCart };
+
+      if (reducedCart.length === 0) {
+        isEmpty = true;
+      }
+
+      return { cartItems: reducedCart, isEmpty: isEmpty };
     },
     IncreaseAmount: (currentState, id) => {
       let item = currentState.cartItems.find(item => item.id === id);
@@ -29,7 +35,7 @@ const configureCartStore = () => {
       let decrease = --item.quantity;
     }
   };
-  initStore(actions, { cartItems: false });
+  initStore(actions, { cartItems: [], isEmpty: true });
 };
 
 export default configureCartStore;

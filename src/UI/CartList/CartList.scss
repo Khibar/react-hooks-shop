@@ -1,0 +1,102 @@
+@import '../../assets/scss/partials/partials';
+
+@mixin FlexCartItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $text-dark;
+  margin: 0;
+}
+.cart-item-list-container {
+  display: flex;
+  flex-direction: row;
+  color: #666;
+  padding: 2rem 0;
+  border-bottom: solid 1px #666;
+
+  &-delete-box {
+    width: 5%;
+    @include FlexCartItem;
+
+    &__icon {
+      color: #c64444;
+      cursor: pointer;
+      font-size: 1.6rem;
+    }
+  }
+
+  &-img-box {
+    width: 15%;
+    @include FlexCartItem;
+
+    &__img {
+      width: 70%;
+    }
+  }
+
+  &-name-box {
+    width: 35%;
+    @include FlexCartItem;
+    justify-content: flex-start;
+
+    &__name {
+      font-size: 1.6rem;
+    }
+  }
+
+  &-quantity-box {
+    width: 30%;
+    @include FlexCartItem;
+
+    &__icon {
+      font-size: 1.6rem;
+      color: $pg-main;
+      cursor: pointer;
+
+      &:first-child {
+        color: #c64444;
+      }
+    }
+
+    &__quantity {
+      font-size: 1.6rem;
+      margin: 0 1.5rem;
+    }
+  }
+
+  &-price-box {
+    width: 15%;
+    @include FlexCartItem;
+
+    &__price {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .cart-item-list-container {
+    &-name-box {
+      &__name {
+        font-size: 1.3rem;
+      }
+    }
+
+    &-quantity-box {
+      &__icon {
+        font-size: 1.3rem;
+      }
+
+      &__quantity {
+        font-size: 1.3rem;
+        margin: 0 1rem;
+      }
+    }
+
+    &-price-box {
+      &__price {
+        font-size: 1.3rem;
+      }
+    }
+  }
+}
