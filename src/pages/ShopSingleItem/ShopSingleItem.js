@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { ItemsContext } from '../../context/ItemsContext';
+import { useStore } from '../../useStore/store';
 
 import SingleItemView from '../../UI/SingleItemView/SingleItemView';
 import ItemCard from '../../UI/ItemCard/ItemCard';
@@ -12,7 +13,7 @@ import './ShopSingleItem.scss';
 const ShopSingleItem = props => {
   let routeId = props.match.params.id;
   const allItems = useContext(ItemsContext).items;
-  const addToCart = useContext(ItemsContext).addToCart;
+  const dispatch = useStore()[1];
 
   const [selectedItem] = allItems.filter(item => item.id === routeId);
 
@@ -36,8 +37,9 @@ const ShopSingleItem = props => {
   ));
 
   const addItemToCart = object => {
-    let newObj = { ...object, quantity: 1 };
-    addToCart(newObj);
+    console.log('sending payload :', object);
+    let payload = { ...object, quantity: 1 };
+    dispatch('AddToCart', payload);
   };
 
   return (

@@ -53,7 +53,7 @@ const SingleItemView = props => {
           }}
           className="single-item-container__btn"
         >
-          Add to Cart{' '}
+          Add to Cart
         </button>
       </Col>
     </React.Fragment>

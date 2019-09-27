@@ -1,0 +1,25 @@
+@import '../../assets/scss/partials/partials';
+.cart-page-fluid-container {
+  height: 40rem;
+  background-image: url('../../assets/img/bg-webshop.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+
+  .cart-page-content-container {
+    display: flex;
+    height: 40rem;
+    flex-direction: column;
+    justify-content: center;
+
+    &__heading {
+      @include Headings;
+    }
+
+    &__sub-heading {
+      @include Headings;
+      font-size: 1.6rem;
+      letter-spacing: 0.5rem;
+    }
+  }
+}
