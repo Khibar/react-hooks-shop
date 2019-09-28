@@ -1,13 +1,14 @@
-import React, { useContext } from 'react';
-import { ItemsContext } from '../../context/ItemsContext';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
+
+import { useStore } from '../../useStore/store';
 
 import './SideBarRecentItems.scss';
 
 const SideBarRecentItems = () => {
-  const newItems = useContext(ItemsContext).items.filter(
-    item => item.isNew === true
-  );
+  const state = useStore()[0];
+  console.log('state!@ :', state);
+  const newItems = state.products.filter(item => item.isNew === true);
 
   const showNewItems = newItems.map(item => {
     return (

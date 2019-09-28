@@ -14,7 +14,11 @@ const LookBook = props => {
       </Col>
       <Col xs={12} md={6} className="look-book-container">
         <div className="look-book-container-box look-book-container-box_box-1">
-          <NavLink to="/" exact className="look-book-container-box__link">
+          <NavLink
+            to="/collection"
+            exact
+            className="look-book-container-box__link"
+          >
             <div className="look-book-container-box__inner-box">
               <h4 className="look-book-container-box__text">Autumn Lookbook</h4>
             </div>
@@ -23,7 +27,11 @@ const LookBook = props => {
       </Col>
       <Col xs={12} md={6} className="look-book-container">
         <div className="look-book-container-box look-book-container-box_box-2">
-          <NavLink to="/" exact className="look-book-container-box__link">
+          <NavLink
+            to={{ pathname: '/shop', state: { activeCat: false } }}
+            exact
+            className="look-book-container-box__link"
+          >
             <div className="look-book-container-box__inner-box">
               <h4 className="look-book-container-box__text">Shop Now</h4>
             </div>

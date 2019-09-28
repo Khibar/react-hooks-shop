@@ -18,25 +18,23 @@ $rd: red solid 2px;
   color: $text-bright;
 }
 
-@mixin Text {
-}
-
-@mixin Button($main, $bg, $second-color) {
+@mixin GreenBtn {
   text-transform: uppercase;
-  color: $main;
+  color: $text-bright;
   height: 5rem;
   line-height: 4.6rem;
-  width: 25rem;
-  font-family: 'Raleway', sans-serif;
-  border: 2px solid $main;
+  width: 20rem;
+  border: 2px solid $pg-main;
   padding: 0 2.6rem;
   display: inline-block;
   cursor: pointer;
-  background-color: $bg;
+  background-color: $pg-main;
+  text-align: center;
 
   &:hover {
-    background-color: $second-color;
-    border-color: $second-color;
+    background-color: $pg-white;
+    border-color: $pg-main;
+    color: $pg-main;
   }
 
   &:visited,
@@ -44,5 +42,32 @@ $rd: red solid 2px;
   :active {
     text-decoration: none;
     outline: none;
+  }
+}
+
+@mixin WhiteBtn {
+  text-transform: uppercase;
+  color: $pg-white;
+  height: 5rem;
+  line-height: 4.6rem;
+  width: 20rem;
+  border: 2px solid $pg-white;
+  padding: 0 2.6rem;
+  display: inline-block;
+  cursor: pointer;
+  background-color: transparent;
+  text-align: center;
+
+  &:hover {
+    background-color: $pg-main;
+    border-color: $pg-main;
+  }
+
+  &:visited,
+  :focus,
+  :active {
+    text-decoration: none;
+    outline: none;
+    color: $pg-white;
   }
 }

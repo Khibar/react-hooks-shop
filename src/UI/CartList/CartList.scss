@@ -67,6 +67,7 @@
   &-price-box {
     width: 15%;
     @include FlexCartItem;
+    font-family: 'Lato', sans-serif;
 
     &__price {
       font-size: 1.6rem;

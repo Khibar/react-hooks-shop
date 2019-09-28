@@ -1,7 +1,6 @@
 @import '../../assets/scss/partials/partials';
 
 .single-item-img {
-  width: 40rem;
 }
 .single-item-container {
   margin: 5rem 0 0 0;
@@ -43,30 +42,7 @@
   }
 
   &__btn {
-    text-transform: uppercase;
-    color: $pg-white;
-    height: 5rem;
-    line-height: 4.6rem;
-    width: 25rem;
-    font-family: 'Raleway', sans-serif;
-    border: 2px solid $pg-main;
-    padding: 0 2.6rem;
-    display: inline-block;
-    cursor: pointer;
-    background-color: $pg-main;
+    @include GreenBtn;
     margin: 3rem 0 0 0;
-
-    &:hover {
-      background-color: $pg-white;
-      border-color: $pg-main;
-      color: $pg-main;
-    }
-
-    &:visited,
-    :focus,
-    :active {
-      text-decoration: none;
-      outline: none;
-    }
   }
 }

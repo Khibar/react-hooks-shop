@@ -1,19 +1,19 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { ItemsContext } from '../../context/ItemsContext';
 import { useStore } from '../../useStore/store';
 
 import SingleItemView from '../../UI/SingleItemView/SingleItemView';
 import ItemCard from '../../UI/ItemCard/ItemCard';
+import ShopHeader from '../../UI/ShopHeader/ShopHeader';
 
 import './ShopSingleItem.scss';
 
 const ShopSingleItem = props => {
   let routeId = props.match.params.id;
-  const allItems = useContext(ItemsContext).items;
-  const dispatch = useStore()[1];
+  const [state, dispatch] = useStore();
+  const allItems = state.products;
 
   const [selectedItem] = allItems.filter(item => item.id === routeId);
 
@@ -37,23 +37,16 @@ const ShopSingleItem = props => {
   ));
 
   const addItemToCart = object => {
-    console.log('sending payload :', object);
     let payload = { ...object, quantity: 1 };
     dispatch('AddToCart', payload);
   };
 
   return (
     <React.Fragment>
-      <Container fluid={true} className="shop-single-item-fluid-container">
-        <Container className="shop-single-item--content-container">
-          <h1 className="shop-single-item--content-container__heading">
-            {selectedItem.name}
-          </h1>
-          <h4 className="shop-single-item--content-container__sub-heading">
-            {selectedItem.description}
-          </h4>
-        </Container>
-      </Container>
+      <ShopHeader
+        heading={selectedItem.name}
+        subHeading={selectedItem.description}
+      />
       <Container>
         <Row>
           <SingleItemView itemData={selectedItem} addItem={addItemToCart} />

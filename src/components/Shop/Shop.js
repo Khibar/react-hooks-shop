@@ -1,5 +1,5 @@
-import React, { useContext, useReducer } from 'react';
-import { ItemsContext } from '../../context/ItemsContext';
+import React, { useReducer, useCallback, useEffect } from 'react';
+import { useStore } from '../../useStore/store';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
@@ -25,17 +25,27 @@ const showItemsReducer = (state, action) => {
 };
 
 const Shop = props => {
-  const itemData = useContext(ItemsContext).items;
+  const itemData = useStore()[0].products;
   const [showItems, dispatch] = useReducer(showItemsReducer, itemData);
+  const initCategory = props.initCat;
 
-  const FilterByCategoryHandler = category => {
-    let filteredData = itemData;
+  const FilterByCategoryHandler = useCallback(
+    category => {
+      let filteredData = itemData;
 
-    if (category !== 'all') {
-      filteredData = itemData.filter(item => item.type === category);
+      if (category !== 'all') {
+        filteredData = itemData.filter(item => item.type === category);
+      }
+      dispatch({ type: 'CATEGORY', data: filteredData });
+    },
+    [itemData]
+  );
+
+  useEffect(() => {
+    if (initCategory !== false) {
+      FilterByCategoryHandler(initCategory);
     }
-    dispatch({ type: 'CATEGORY', data: filteredData });
-  };
+  }, [FilterByCategoryHandler, initCategory]);
 
   const SortByPriceHandler = direction => {
     let sortedData = showItems.sort((a, b) => a.price - b.price);
@@ -58,6 +68,7 @@ const Shop = props => {
           name={item.name}
           description={item.description}
           price={item.price}
+          id={item.id}
         />
       </Col>
     );

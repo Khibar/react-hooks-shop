@@ -8,7 +8,13 @@ const Categories = props => {
   return (
     <React.Fragment>
       <Col sm={12} md={6} className="categories-container">
-        <NavLink to="/" className="categories-container__link">
+        <NavLink
+          to={{
+            pathname: '/shop',
+            state: { activeCat: 'shoe' }
+          }}
+          className="categories-container__link"
+        >
           <img
             src="img/shoes.jpg"
             alt="shoes category"
@@ -18,7 +24,13 @@ const Categories = props => {
         </NavLink>
       </Col>
       <Col sm={12} md={6} className="categories-container">
-        <NavLink to="/" className="categories-container__link">
+        <NavLink
+          to={{
+            pathname: '/shop',
+            state: { activeCat: 'hat' }
+          }}
+          className="categories-container__link"
+        >
           <img
             src="img/hats.jpg"
             alt="hats category"
@@ -28,7 +40,13 @@ const Categories = props => {
         </NavLink>
       </Col>
       <Col sm={12} md={6} className="categories-container">
-        <NavLink to="/" className="categories-container__link">
+        <NavLink
+          to={{
+            pathname: '/shop',
+            state: { activeCat: 'accessory' }
+          }}
+          className="categories-container__link"
+        >
           <img
             src="img/acs.jpg"
             alt="accessories category"
@@ -38,7 +56,13 @@ const Categories = props => {
         </NavLink>
       </Col>
       <Col sm={12} md={6} className="categories-container">
-        <NavLink to="/" className="categories-container__link">
+        <NavLink
+          to={{
+            pathname: '/shop',
+            state: { activeCat: 'bag' }
+          }}
+          className="categories-container__link"
+        >
           <img
             src="img/bags.jpg"
             alt="bgs category"

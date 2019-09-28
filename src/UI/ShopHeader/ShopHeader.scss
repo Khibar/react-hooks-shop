@@ -1,0 +1,41 @@
+@import '../../assets/scss/partials/partials';
+
+.shop-header-fluid-container {
+  height: 40rem;
+  background-image: url('../../assets/img/bg-webshop.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+
+  .shop-header-content-container {
+    display: flex;
+    height: 40rem;
+    flex-direction: column;
+    justify-content: center;
+
+    &__heading {
+      @include Headings;
+    }
+
+    &__sub-heading {
+      @include Headings;
+      font-size: 1.6rem;
+      letter-spacing: 0.5rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .shop-header-fluid-container {
+    .shop-header-content-container {
+      &__heading {
+        font-size: 3.5rem;
+      }
+
+      &__sub-heading {
+        margin: 2rem 0 0 0;
+        line-height: 1.8rem;
+      }
+    }
+  }
+}

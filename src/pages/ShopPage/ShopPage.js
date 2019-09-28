@@ -3,24 +3,21 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 
 import Shop from '../../components/Shop/Shop';
+import ShopHeader from '../../UI/ShopHeader/ShopHeader';
+import ScrollToTop from '../../assets/js/ScrollToTop';
 
 import './ShopPage.scss';
 
 const ShopPage = props => {
+  let selectedCat = props.history.location.state.activeCat;
+
   return (
     <React.Fragment>
-      <Container fluid={true} className="shop-page-fluid-container">
-        <Container className="shop-page-content-container">
-          <h1 className="shop-page-content-container__heading">Web Shop</h1>
-          <h5 className="shop-page-content-container__sub-heading">
-            Curated, Must-Have Products
-          </h5>
-        </Container>
-      </Container>
-
+      <ScrollToTop pathname={props.history.location.pathname} />
+      <ShopHeader heading="Web Shop" subHeading="Curated, Must-Have Products" />
       <Container>
         <Row>
-          <Shop />
+          <Shop initCat={selectedCat} />
         </Row>
       </Container>
     </React.Fragment>

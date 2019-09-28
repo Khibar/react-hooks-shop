@@ -1,5 +1,6 @@
 import React from 'react';
 import Col from 'react-bootstrap/Col';
+import Image from 'react-bootstrap/Image';
 
 import './SingleItemView.scss';
 
@@ -11,11 +12,12 @@ const SingleItemView = props => {
   return (
     <React.Fragment>
       <Col sm={12} md={4}>
-        <img
+        <Image
           src={'../' + props.itemData.imgUrl}
           alt="new Item"
           className="single-item-img"
-        ></img>
+          fluid
+        ></Image>
       </Col>
       <Col
         sm={12}

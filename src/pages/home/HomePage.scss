@@ -21,30 +21,45 @@
     }
 
     &__btn-collection {
-      @include Button($pg-main, transparent, $pg-main);
+      @include WhiteBtn;
+      width: 25rem;
       margin: 0 2rem 0 0;
-      color: $pg-main;
-
-      &:hover {
-        border-color: $pg-white;
-        color: $pg-white;
-      }
     }
 
     &__btn-shop {
-      @include Button($text-bright, transparent, $pg-main);
+      @include GreenBtn;
+      width: 25rem;
       margin: 0 0 0 2rem;
     }
   }
 }
 
 .home-page-container {
-  height: 400rem;
   &__row {
     margin-top: 6rem;
 
     &_bg-grey {
       background-color: rgb(247, 247, 247);
+    }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .home-page-landing-screen {
+    &-content {
+      text-align: center;
+
+      &__heading {
+        margin: 0;
+      }
+
+      &__btn-collection {
+        margin: 2rem 0;
+      }
+
+      &__btn-shop {
+        margin: 2rem 0;
+      }
     }
   }
 }

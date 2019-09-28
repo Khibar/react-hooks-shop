@@ -3,20 +3,20 @@ import ReactDOM from 'react-dom';
 import App from './app/App';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter } from 'react-router-dom';
-import ItemsProvider from './context/ItemsContext';
 import configureCartStore from './useStore/cartStore';
+import configureProductsStore from './useStore/productStore';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './assets/scss/main.scss';
 
 configureCartStore();
+configureProductsStore();
 
 ReactDOM.render(
-  <ItemsProvider>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </ItemsProvider>,
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+
   document.getElementById('root')
 );
 
