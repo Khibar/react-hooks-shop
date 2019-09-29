@@ -24,6 +24,10 @@
       @include WhiteBtn;
       width: 25rem;
       margin: 0 2rem 0 0;
+
+      :hover {
+        color: #ffffff !important;
+      }
     }
 
     &__btn-shop {
@@ -44,7 +48,7 @@
   }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 450px) {
   .home-page-landing-screen {
     &-content {
       text-align: center;
